@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class objectEx2Bank {
 	public static void main(String[] args) {
 		Bank[] accounts = new Bank[3];
-		Bank b1 = new Bank();
+		
 		boolean run = true;
 		int selectNo = 0;
 		
@@ -18,24 +18,44 @@ public class objectEx2Bank {
 			
 			if(selectNo ==1) { //등록
 				for(int i=0; i<accounts.length; i++) {
+					Bank b1 = new Bank();
 				System.out.println("계좌 입력");
 				b1.accountNo = scn.nextLine();
 				System.out.println("이름 입력");
 				b1.owner = scn.nextLine();
 				System.out.println("입금하셈");
 				b1.balance = Integer.parseInt(scn.nextLine());
+				
+				accounts[i] = b1;
 				}
 			} else if (selectNo ==2) { // 조회
+				System.out.println("계장번호를 입력해라");
+				String a = scn.nextLine();
 				for(int i=0; i<accounts.length; i++) {
-					System.out.println("조회");
-					
+					if(accounts[i].accountNo.equals(a)) {
+						System.out.printf("예금주는 %s , 금액은 %d입니다 \n",accounts[i].owner,accounts[i].balance);
+					} 
 				}
 			} else if (selectNo ==3) { // 입금
-				
+				System.out.println("입금할 계좌 적어라");
+				String a = scn.nextLine();
+				for(int i =0; i<accounts.length; i++) {
+					if(accounts[i].accountNo.equals(a)) {
+						System.out.println("얼마넣을꺼고");
+						accounts[i].balance += Integer.parseInt(scn.nextLine());
+					}
+				}
 			} else if (selectNo ==4) { // 출금
-				
+				System.out.println("출금할 계좌 적어라");
+				String a = scn.nextLine();
+				for(int i =0; i<accounts.length; i++) {
+					if(accounts[i].accountNo.equals(a)) {
+						System.out.println("얼마뺄꼬");
+						accounts[i].balance -= Integer.parseInt(scn.nextLine());
+					}
+				}
 			} else if (selectNo ==5) { // 종료
-				
+				run = false;
 			}
 			
 			

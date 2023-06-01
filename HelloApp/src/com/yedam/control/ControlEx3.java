@@ -2,7 +2,7 @@ package com.yedam.control;
 
 public class ControlEx3 {
 	public static void main(String[] args) {
-		int month = 6;
+		int month = 5;
 		String days = "Sun Mon Tue Wed Thr Fri Sat";
 		System.out.println(days);
 		System.out.println("===========================");
