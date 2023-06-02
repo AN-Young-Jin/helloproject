@@ -1,6 +1,6 @@
 package com.yedam.object;
 
-public class Student {
+public class Studentexexex {
 	// field.
 	private String stdNo;
 	private String stdName;
@@ -8,7 +8,7 @@ public class Student {
 	private int score;
 
 	// constructor.
-	public Student(String stdNo, String stdName, String gender, int score) {
+	public Studentexexex(String stdNo, String stdName, String gender, int score) {
 		this.stdNo = stdNo;
 		this.stdName = stdName;
 		this.gender = gender;
